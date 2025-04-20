@@ -1,3 +1,9 @@
+app.py: This script will:
+            Train a simple linear regression model
+            Create a Flask API endpoint
+            Log the prediction to output.txt
+
+
 ## Q1
 
 Y_i = α + τ*W_i + β*X_i + ε_i fitted
@@ -16,3 +22,4 @@ c) For τ̂  to be causal: conditional on X, W is independent of outcomes (no hi
 
 ## Q2
 
+c) When run my API using input values W_i = 1 (participated in the carbon offset program) and X_i = 20 (corporation annualy spent $20,000 on sustainability initiatives), the predicted engagement score returned is 117.16.
