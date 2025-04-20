@@ -49,19 +49,17 @@ app = Flask(__name__)
 
 @app.route("/predict")
 def predict():
-  w = float(request.args.get("w", 0))
-  x = float(request.args.get("x", 0))
-  
-  # build new data for prediction
-  new_X = sm.add_constant(pd.DataFrame({'W': [w], 'X': [x]}))
-  
-  y_pred = ols_res.predict(new_X)[0]
-
-  # Log prediction
-  with open("output.txt", "w") as f:
-    f.write(f"Input: w={w}, x={x}\nPrediction: {y_pred}\n")
+    w = float(request.args.get("w", 0))
+    x = float(request.args.get("x", 0))
+    new_X = pd.DataFrame({'const': [1], 'W': [w],'X': [x]})
     
-  return jsonify({"w": w, "x": x, "prediction": y_pred})
+    y_pred = ols_res.predict(new_X)[0]
+    
+    # Log prediction
+    with open("output.txt", "w") as f:
+        f.write(f"Input: w={w}, x={x}\nPrediction: {y_pred}\n")
+    
+    return jsonify({"w": w, "x": x, "prediction": y_pred})
 
 if __name__ == "__main__":
   app.run(host="0.0.0.0", port=5000)
