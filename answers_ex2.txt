@@ -1,0 +1,5 @@
+## Q1
+Y_i = α + τ*W_i + β*X_i + ε_i fitted
+a) Parameters estimated using linear regression: α̂ = 95.97, τ̂ = –9.11, β̂ = 1.51 (Using Python)
+b) Estimated ATE (τ̂) = -9.1057, p‑value = 0.0004 (p < 0.05, statistically significant), indicating participation in the carbon‑offset program W is associated with a statistically highly significant 9.11 point decrease in stakeholder engagement Y (holding spending X fixed).
+c) For τ̂  to be causal: conditional on X, W is independent of outcomes (no hidden confounders). Stable Unit Treatment Value Assumption (SUTVA) holds (no interference and a well defined treatment). For each value of X, there must be overlap of both W=1 and W=0. The linear regression model is appropriate and no key predictors are left out.
