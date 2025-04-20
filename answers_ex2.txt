@@ -3,6 +3,12 @@ app.py: This script will:
             Create a Flask API endpoint
             Log the prediction to output.txt
 
+requirements.txt: This file lists all the Python packages I need. Docker will use it to install everything automatically.
+
+Dockerfile: Container Setup: The Dockerfile defines the environment and execution steps.
+            Use official Python 3.10 image, set working directory inside container, copy project files into the container, install Python dependencies, open port 5000 for the Flask app, run the application on container start
+
+Containerization improves reproducibility: By packaging the code, runtime, and all dependencies into one immutable image, containers run identically on any host, eliminating environment‑related inconsistencies.
 
 ## Q1
 
